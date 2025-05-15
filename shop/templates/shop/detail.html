@@ -54,7 +54,17 @@
                             <img class="card-img-top mb-5 mb-md-0" src="{{product.get_absolute_url}}" alt="..." />
                        
                     </div>
+                        
+
+
                     <div class="col-md-6">
+                        
+                            <button type="button" class="btn btn-outline-primary">Edit</button>
+                        
+                        <a href="{% url 'delete_product' product.id %}">
+                            <button type="button" class="btn btn-outline-danger">Delete</button><br>
+                        </a>
+
                         <div class="small mb-1">Quantity : {{product.amount}} </div>
                         <h1 class="display-5 fw-bolder">{{product.name}}</h1>
                         <div class="fs-5 mb-5">
@@ -88,8 +98,21 @@
                                
         
                                   <div class="form-group mb-3">
-                                   
                                     <input type="submit" class="btn btn-success" value="Send">
+                                  </div>
+                                  {% comment %} django messages {% endcomment %}
+                                  <div>
+                                    
+                                    {% if messages %}
+                                    <div class="messages">
+                                        {% for message in messages %}
+                                            <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+
                                   </div>
                               </form>
                            

@@ -52,7 +52,6 @@ class Product(BaseModel):
         ordering = ['-price']
 
 
-
 class Order(BaseModel):
     name = models.CharField(max_length=200)
     phone = models.CharField(max_length=20)
@@ -60,8 +59,9 @@ class Order(BaseModel):
     product = models.ForeignKey(Product,
                                 on_delete=models.CASCADE,
                                 related_name='orders',
-                                null=True,blank=True
+                                null=True, blank=True
                                 )
-    
+    rating = models.PositiveIntegerField(null=True, blank=True)  # <-- Qo'shildi
+
     def __str__(self):
         return f'{self.name} - {self.quantity}'
