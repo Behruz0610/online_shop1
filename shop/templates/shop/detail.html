@@ -18,11 +18,19 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
+<<<<<<< HEAD
                 <a class="navbar-brand" href="{% url 'shop:index' %}">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'shop:index' %}">Home</a></li>
+=======
+                <a class="navbar-brand" href="{% url 'index' %}">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a></li>
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -61,7 +69,11 @@
                         
                             <button type="button" class="btn btn-outline-primary">Edit</button>
                         
+<<<<<<< HEAD
                         <a href="{% url 'shop:delete_product' product.id %}">
+=======
+                        <a href="{% url 'delete_product' product.id %}">
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                             <button type="button" class="btn btn-outline-danger">Delete</button><br>
                         </a>
 
@@ -77,7 +89,11 @@
                         </div>
                         <p class="lead">{{product.description}}</p>
                         <div class="d-flex">
+<<<<<<< HEAD
                             <form method="post" action="{%url 'shop:order_detail' product.id%}">
+=======
+                            <form method="post" action="{%url 'order_detail' product.id%}">
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <h2>Place an order</h2>
@@ -148,7 +164,11 @@
                             <h3>Add Comment</h3>
                         </div>
                     
+<<<<<<< HEAD
                     <form method="post" action="{% url 'shop:comment_create' product.id %}" >
+=======
+                    <form method="post" action="{% url 'comment_create' product.id %}" >
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                         {%csrf_token%}
                         <div>
                             <select id="rating" name="rating">
@@ -191,6 +211,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <h2 class="fw-bolder mb-4">Related products</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<<<<<<< HEAD
                     {% for product in related_products%}
                         <div class="col mb-5">
                             <div class="card h-100">
@@ -218,6 +239,102 @@
 
                   
 
+=======
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" 
+                            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detail.html">View product</a></div>
+
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                  
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" 
+                            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detail.html">View product</a></div>
+
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" 
+                            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detail.html">View product</a></div>
+
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" 
+                            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="detail.html">View product</a></div>
+
+                        
+                            </div>
+                        </div>
+                    </div>
+
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 
                 </div>
@@ -232,4 +349,8 @@
         <!-- Core theme JS-->
         <script src="{% static 'shop/js/scripts.js' %}"></script>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e

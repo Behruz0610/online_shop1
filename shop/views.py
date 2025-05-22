@@ -7,7 +7,10 @@ from .forms import OrderForm,ProductForm,CommentForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.db.models.functions import Round
+<<<<<<< HEAD
 from .utils import product_rating_filter
+=======
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 
 
@@ -35,8 +38,21 @@ def index(request,category_id=None):
         
     products = products.annotate(avg_rating = Round(Avg('comments__rating'),precision = 2) )
 
+<<<<<<< HEAD
     products = product_rating_filter(filter_type,products)
    
+=======
+        
+    if filter_type == 'expensive':
+        products = products.order_by('-price')
+    
+    elif filter_type == 'cheap':
+        products = products.order_by('price')
+        
+    
+    elif filter_type == 'rating':
+        products = products.order_by('-avg_rating')
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
     
     # DRY => Dont Repeat Yourself
     
@@ -53,11 +69,15 @@ def index(request,category_id=None):
 def product_detail(request,product_id):
     try:
         product = Product.objects.get(id = product_id)
+<<<<<<< HEAD
         related_products = Product.objects.filter(category = product.category).exclude(id=product.id)
         context = {
             'product':product,
             'related_products':related_products,
             }
+=======
+        context = {'product':product}
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
         return render(request,'shop/detail.html',context)
     
     except Product.DoesNotExist:
@@ -91,7 +111,11 @@ def order_detail(request,pk):
                     messages.SUCCESS,
                     'Item successfully ordered'
                 )
+<<<<<<< HEAD
                 return redirect('shop:product_detail',pk)
+=======
+                return redirect('product_detail',pk)
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
     context = {
         'form':form,
         'product':product
@@ -107,7 +131,11 @@ def create_product(request):
         form = ProductForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
+<<<<<<< HEAD
             return redirect('shop:index')
+=======
+            return redirect('index')
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
     
     context = {
         'form':form
@@ -125,7 +153,11 @@ def delete_product(request,pk):
     product = get_object_or_404(Product,pk=pk)
     if request.method == 'POST':
         product.delete()
+<<<<<<< HEAD
         return redirect('shop:index')
+=======
+        return redirect('index')
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
     return render(request,'shop/product/delete.html',{'product':product})
 
 
@@ -139,6 +171,10 @@ def comment_create(request,pk):
         comment = form.save(commit=False)
         comment.product = product
         comment.save()
+<<<<<<< HEAD
         return redirect('shop:product_detail',pk)
+=======
+        return redirect('product_detail',pk)
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
     
     return render(request,'shop/detail.html',{'form':form})

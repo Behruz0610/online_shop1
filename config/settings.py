@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'widget_tweaks',
+<<<<<<< HEAD
     'adminsortable2',
     'users.apps.UsersConfig',
 
+=======
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 ]
 
@@ -132,7 +135,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = "users.User"
+=======
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e

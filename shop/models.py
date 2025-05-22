@@ -6,6 +6,7 @@ from decimal import Decimal
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+<<<<<<< HEAD
     my_order = models.PositiveIntegerField(
         default=0,
         null=True,
@@ -15,6 +16,11 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
         
+=======
+    
+    class Meta:
+        abstract = True
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 class Category(BaseModel):
     title = models.CharField(max_length=100,unique=True)
@@ -25,8 +31,11 @@ class Category(BaseModel):
     class Meta:
         verbose_name_plural = 'categories'
         verbose_name = 'category'
+<<<<<<< HEAD
         ordering = ['my_order']
         db_table = 'category'
+=======
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 
 class Product(BaseModel):
@@ -57,8 +66,12 @@ class Product(BaseModel):
     class Meta:
         verbose_name_plural = 'products'
         verbose_name = 'product'
+<<<<<<< HEAD
         ordering = ['my_order']
         db_table = 'product'
+=======
+        ordering = ['-price']
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 
 
@@ -76,8 +89,12 @@ class Order(BaseModel):
         return f'{self.name} - {self.quantity}'
 
 
+<<<<<<< HEAD
     class Meta:
         db_table = 'order'
+=======
+
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
 
 
 class Comment(BaseModel):
@@ -96,7 +113,11 @@ class Comment(BaseModel):
     rating = models.IntegerField(choices = RatingChoices.choices,default = RatingChoices.THREE.value)
     
     def __str__(self):
+<<<<<<< HEAD
         return f'{self.name} - {self.rating}'
     
     class Meta:
         db_table = 'comment'
+=======
+        return f'{self.name} - {self.rating}'
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e

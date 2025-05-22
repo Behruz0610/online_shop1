@@ -28,22 +28,34 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
                                 <li><a class="dropdown-item" href="{% url 'shop:index' %}">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 {% for category in categories%}
                                     <li><a class="dropdown-item" href="{% url 'shop:products_by_category' category.id %}">{{category.title}}</a></li>
+=======
+                                <li><a class="dropdown-item" href="{% url 'index' %}">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                {% for category in categories%}
+                                    <li><a class="dropdown-item" href="{% url 'products_by_category' category.id %}">{{category.title}}</a></li>
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                                 {%endfor%}
                             </ul>
                         </li>
                     </ul>
                     <form method="get" class="d-flex">
                         <input type="text" class="form-contro" name="q">
+<<<<<<< HEAD
                         <button style="margin-right: 50px;" class="btn btn-outline-dark" type="submit">
+=======
+                        <button class="btn btn-outline-dark" type="submit">
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                             <i class="bi-search-fill me-1"></i>
                             Search
                            
                         </button>
                     </form>
+<<<<<<< HEAD
 
                   
                     
@@ -67,6 +79,8 @@
                         </div>
 
                     {%endif%}
+=======
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                 </div>
             </div>
         </nav>
@@ -99,7 +113,11 @@
                 </div>
                 {%if user.is_authenticated%}
                     <div class="col-1">
+<<<<<<< HEAD
                         <a href="{% url 'shop:create_product' %}">
+=======
+                        <a href="{% url 'create_product' %}">
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                             <button type="button" class="btn btn-success" style="font-size: 16px; padding: 10px 20px; border-radius: 8px;">
                                 ➕ ADD PRODUCT
                             </button>
@@ -121,7 +139,11 @@
                                 {%endif%}
 
                                 <!-- Product image-->
+<<<<<<< HEAD
                                 <a href="{% url 'shop:product_detail' product.id %}">
+=======
+                                <a href="{% url 'product_detail' product.id %}">
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                                     <img class="card-img-top" src="{{product.get_absolute_url}}" alt="..." />
                                 </a>
                                 <!-- Product details-->
@@ -144,7 +166,11 @@
                                 </div>
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+<<<<<<< HEAD
                                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'shop:product_detail' product.id %}">View product</a></div>
+=======
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product_detail' product.id %}">View product</a></div>
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
                                 
                                     
                                 </div>
@@ -163,4 +189,8 @@
         <!-- Core theme JS-->
         <script src="{% static 'shop/js/scripts.js' %}"></script>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 7065014f6ba19135e4a15716eb87ce3569946d8e
